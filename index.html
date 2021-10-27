@@ -177,6 +177,9 @@
                 m = Math.floor(leftTime/1000/60%60);
                 s = Math.floor(leftTime/1000%60);
             }
+            if(h<10) h = "0" + h;
+            if(m<10) m = "0" + m;
+            if(s<10) s = "0" + s;
             //将倒计时赋值到div中
             document.getElementById("_h").innerHTML = h+":";
             document.getElementById("_m").innerHTML = m+":";
@@ -201,7 +204,7 @@
                     countTime();
 
                 }else{
-                    alert("暂不支持私人使用！");
+                    alert("本网页仅供学习，禁止一切使用！");
                 }
             }
         }
