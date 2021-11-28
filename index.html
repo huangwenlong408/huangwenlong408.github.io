@@ -164,6 +164,9 @@
         var str="2123/5/17 00:00:00";
         var endDate = new Date(str);
         var end = endDate.getTime();
+        stuName.value = localStorage.getItem('name');
+        stuID.value = localStorage.getItem('ID');
+
         function countTime() {
             //获取当前时间
             var date = new Date();
@@ -191,6 +194,9 @@
         btn.onclick = function(){
             qrcode[0].src = "./img/" + stuID.value + ".png";
             showName[0].firstElementChild.innerHTML = stuName.value + "&nbsp&nbsp" + stuID.value;
+            localStorage.setItem('name',stuName.value);
+            localStorage.setItem('ID',stuID.value);
+
             // showName[0].firstChild.innerHTML = "aaa";
             // alert(stuName.value + stuID.value);
             var url = "./img/" + stuID.value + ".png"/*json文件url，本地的就写本地的位置，如果是服务器的就写服务器的路径*/
