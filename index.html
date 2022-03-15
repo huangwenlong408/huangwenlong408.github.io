@@ -1,221 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>外出申请</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        .top-bar {
-            display: flex;
-            text-align: center;
-            width: 100%;
-            /* height: 25%; */
-        }
-        .top-text {
-            /* height: 14px; */
-            padding-top: 14px;
-            padding-bottom: 13px;
-            width: 50%;
-            text-align: center;
-            font-size: 14px;
-        }
-        .info-bar {
-            padding-top: 1px;
-            background-color: rgb(82, 199, 202);
-            width: 100%;
-            height: 126px;
-            margin-top: 0%;
-        }
-        .img1-backgroundcolor {
-            display: inline-block;
-            width: 86px;
-            height: 86px;
-            border-radius: 50%;
-            margin: 20px;
-            background-color: white;
-        }
-        .img1 {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            margin: 3px;
-        }
-        .xsxx {
-            display: inline-block;
-            margin-top: 30px;
-            vertical-align: top;
-            font-size: 16px;
-            line-height: 30px;
-            color: white;
-        }
-        .text1 {
-            line-height: 50px;
-            margin-left: 30px;
-            margin-right: 30px;
-            height: 50px;
-            font-size: 18px;
-            border-bottom: 1px solid #eee;
-        }
-        .load {
-            /* display: flex; */
-            height: 50px;
-            line-height: 50px;
-            font-size: 14px;
-            margin-top: 15px;
-            text-align: center;
-        }
-        .img2 {
-            width: 26px;
-            height: 26px;
-            margin-top: 12px;
-            margin-right: 5px;
-        }
-        .text2 {
-            display: inline-block;
-            vertical-align: top;
-            color: rgb(255, 153, 24);
-        }
-        .codecontent {
-            margin-left: calc(50vw - 85px);
-            width: 170px;
-            height: 170px;
-            border: 1px solid rgba(239, 239, 239, 1);
-            margin-top: 10px;
-        }
-        .img3 {
-            width: 150px;
-            height: 150px;
-            margin: 10px;
-        }
-        .text3 {
-            margin-left: calc(20vw);
-            width: calc(60vw);
-            text-align: center;
-            font-size: 12px;
-            color: rgb(146, 150, 156);
-            margin-top: 20px;
-            padding-bottom: 30px;
-        }
-        .inputinfo {
-            text-align: center;
-        }
-        .btn {
-            margin-top: 10px;
-            border: none;
-        }
-    </style>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>主页</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+	</style>
 </head>
 <body>
-    <div class="top-bar">
-        <a class="top-text">外出申请</a>
-        <a class="top-text">外出记录</a>
-    </div>
-    <div class="info-bar">
-        <div class="img1-backgroundcolor" >
-            <img src="./img/none.png" class="img1">
-        </div>
-        <div class="xsxx">
-            <div>CUG</div>
-            <div>计算机学院/</div>
-        </div>
-    </div>
-    <div class="text1">临时出校二维码</div>
-    <div class="load">
-        <img src="./img/ld.png" class="img2">
-        <div class="text2">
-            
-            <span>距离返回时间还剩：0天&nbsp</span>
-            <span id="_h">00</span>
-            <span id="_m">00</span>
-            <span id="_s">00</span>
-        </div>
-    </div>
-    <div class="codecontent">
-        <div class="QRcode">
-            <img class="img3">
-        </div>
-    </div>
-    <div class="text3">请向校方检查人员出示二维码，扫码进校~</div>
-    <div class="inputinfo">
-        <td>姓名</td>
-        <input type="text" name="stuinfo" id="name">
-        <br>
-        <td>学号</td>
-        <input type="text" name="stuinfo" id="id">
-    </div>
-    <div class="inputinfo">
-        <button id="btn" class="btn">
-            保存
-        </button>
-    </div>
-    <script>
-        var stuName = document.getElementById("name");
-        var stuID = document.getElementById("id");
-        var btn = document.getElementById("btn");
-        var qrcode = document.getElementsByClassName("img3");
-        var showName = document.getElementsByClassName("xsxx");
-        var inputinfo = document.getElementsByClassName("inputinfo")
-        var str="2123/5/17 00:00:00";
-        var endDate = new Date(str);
-        var end = endDate.getTime();
-        stuName.value = localStorage.getItem('name');
-        stuID.value = localStorage.getItem('ID');
-
-        function countTime() {
-            //获取当前时间
-            var date = new Date();
-            var now = date.getTime();
-            //时间差
-            var leftTime = end-now;
-            //定义变量 h,m,s保存倒计时的时间
-            var h,m,s;
-            if (leftTime>=0) {
-                h = Math.floor(leftTime/1000/60/60%24);
-                m = Math.floor(leftTime/1000/60%60);
-                s = Math.floor(leftTime/1000%60);
-            }
-            if(h<10) h = "0" + h;
-            if(m<10) m = "0" + m;
-            if(s<10) s = "0" + s;
-            //将倒计时赋值到div中
-            document.getElementById("_h").innerHTML = h+":";
-            document.getElementById("_m").innerHTML = m+":";
-            document.getElementById("_s").innerHTML = s;
-            //递归每秒调用countTime方法，显示动态时间效果
-            setTimeout(countTime,1000);
-
-        }
-        btn.onclick = function(){
-            qrcode[0].src = "./img/" + stuID.value + ".png";
-            showName[0].firstElementChild.innerHTML = stuName.value + "&nbsp&nbsp" + stuID.value;
-            localStorage.setItem('name',stuName.value);
-            localStorage.setItem('ID',stuID.value);
-
-            // showName[0].firstChild.innerHTML = "aaa";
-            // alert(stuName.value + stuID.value);
-            var url = "./img/" + stuID.value + ".png"/*json文件url，本地的就写本地的位置，如果是服务器的就写服务器的路径*/
-            var request = new XMLHttpRequest();
-            request.open("get", url);/*设置请求方法与路径*/
-            request.send(null);/*不发送数据到服务器*/
-            request.onload = function () {/*XHR对象获取到返回信息后执行*/
-                if (request.status == 200) {/*返回状态为200，即为数据获取成功*/
-                    inputinfo[0].style.display = "none";
-                    inputinfo[1].style.display = "none";
-                    countTime();
-
-                }else{
-                    alert("本网页仅供学习，禁止一切使用！");
-                }
-            }
-        }
-
-        
-    </script>
+	<div class="topBar">
+		<button>案例一</button>
+	</div>
+	<script type="module" src="./main.js">
+	</script>
 </body>
 </html>

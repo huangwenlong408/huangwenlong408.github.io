@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>临时出校二维码</title>
+</head>
+<style>
+  @import url(./lscx.css);
+</style>
+<body>
+  <div class="top-bar">
+		<a class="top-text">外出申请</a>
+		<a class="top-text">外出记录</a>
+	</div>
+	<div class="info-bar">
+		<div class="img1-backgroundcolor">
+			<img src="./img/none.png" class="img1">
+		</div>
+		<div class="xsxx">
+			<div>CUG</div>
+			<div>计算机学院/</div>
+		</div>
+	</div>
+	<div class="text1">临时出校二维码</div>
+	<div class="load">
+		<img src="./img/ld.png" class="img2">
+		<div class="text2">
+			<span>距离返回时间还剩：0天&nbsp</span>
+			<span id="_h">00</span>
+			<span id="_m">00</span>
+			<span id="_s">00</span>
+		</div>
+	</div>
+	<div class="codecontent">
+		<div class="QRcode">
+			<img class="img3">
+		</div>
+	</div>
+	<div class="text3">请向校方检查人员出示二维码，扫码进校~</div>
+	<div class="inputinfo">
+		<td>姓名</td>
+		<input type="text" name="stuinfo" id="name">
+		<br>
+		<td>学号</td>
+		<input type="text" name="stuinfo" id="id">
+	</div>
+	<div class="inputinfo">
+		<button id="btn" class="btn">
+			保存
+		</button>
+	</div>
+	<script type="module" src="main.js"></script>
+</body>
+</html>
