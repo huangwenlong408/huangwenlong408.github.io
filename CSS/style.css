@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.con{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  line-height: 80px;
+  font-size: 30px;
+  letter-spacing: 15px;
+}
+.wrapper{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(200deg,#ec77ab,#7873f5);
+  clip-path: circle(25px at calc(100% - 45px) 45px);
+  transition: all 0.3s ease-in-out;
+}
+.menu-btn{
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  z-index: 2;
+  background: linear-gradient(200deg,#ec77ab,#7873f5);
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 40px;
+  font-style: normal;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.menu-btn::before{
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 30px;
+  margin-left: -15px;
+  margin-top: -5px;
+  border-top: 10px solid;
+  transition: 0.5s;
+}
+.menu-btn::after{
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 30px;
+  margin-left: -5px;
+  margin-top: -15px;
+  border-left: 10px solid;
+  transition: 0.5s;
+}
+#menu_btn{
+  display: none;
+}
+#menu_btn:checked ~ .wrapper{
+  clip-path: circle(75%);
+}
+#menu_btn:checked ~ .menu-btn{
+  color: #d576ba;
+  background: #fff;
+  transition: 0.2s;
+}
+#menu_btn:checked ~ .menu-btn::after{
+  transform: rotateZ(45deg);
+  transition: 0.5s
+}
+#menu_btn:checked ~ .menu-btn::before{
+  transform: rotateZ(45deg);
+  transition: 0.5s
+}
+.icon{
+  width: 30px;
+  color: #fff;
+}
+.wrapper ul{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  list-style: none;
+  text-align: center;
+}
+.wrapper ul li{
+  margin: 30px 0;
+}
+.wrapper ul li a{
+  color: #fff;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: 500;
+  padding: 5px 50px;
+  position: relative;
+  line-height: 50px;
+}
+.wrapper ul li a::after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  background: #fff;
+  z-index: -1;
+  border-radius: 50px;
+  left: 0;
+  transform: scaleY(0);
+  transition: 0.3s;
+}
+.wrapper ul li a:hover::after{
+  transform: scaleY(1);
+}
+.wrapper ul li a:hover{
+  color: #d576ba;
+}
