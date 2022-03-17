@@ -19,16 +19,17 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(200deg,#ec77ab,#7873f5);
-  clip-path: circle(25px at calc(100% - 45px) 45px);
+  background: linear-gradient(200deg,#0162c8, #55e7fc);
+  clip-path: circle(25px at 50% 90%);
   transition: all 0.3s ease-in-out;
 }
 .menu-btn{
   position: absolute;
-  right: 20px;
-  top: 20px;
+  left: calc(50% - 25px);
+  top: calc(90% - 25px);
   z-index: 2;
-  background: linear-gradient(200deg,#ec77ab,#7873f5);
+  /* background: linear-gradient(200deg,#0162c8, #55e7fc); */
+  background: #3a84d3;
   width: 50px;
   height: 50px;
   text-align: center;
@@ -69,7 +70,7 @@
   clip-path: circle(75%);
 }
 #menu_btn:checked ~ .menu-btn{
-  color: #d576ba;
+  color: #0162c8;
   background: #fff;
   transition: 0.2s;
 }
@@ -81,10 +82,7 @@
   transform: rotateZ(45deg);
   transition: 0.5s
 }
-.icon{
-  width: 30px;
-  color: #fff;
-}
+
 .wrapper ul{
   position: absolute;
   top: 50%;
@@ -122,4 +120,26 @@
 }
 .wrapper ul li a:hover{
   color: #d576ba;
+}
+
+.home{
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-size: 50px;
+  background-image: url('../img/主页.png');
+}
+.note{
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-size: 50px;
+  background-image: url('../img/笔记本.png');
+}
+.me{
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-size: 50px;
+  background-image: url('../img/个人.png');
 }
