@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" color-mode="light">
+<html lang="zh-CN" color-mode="light">
 
   <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="keywords" content="" />
-  <meta name="author" content="John Doe" />
+  <meta name="author" content="W.L Huang" />
   <meta name="description" content="" />
   
   
@@ -16,7 +16,7 @@
       
       |
     
-     Hexo
+     黄文龙的博客
   </title>
 
   
@@ -31,6 +31,10 @@
   <link rel="stylesheet" href="/css/main.css" />
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1886449_67xjft27j1l.css" />
   <!-- 代码块风格 -->
+  
+    
+<link rel="stylesheet" href="/css/figcaption/mac-block.css">
+
   
 
   <!-- jquery3.3.1 -->
@@ -68,32 +72,28 @@
     <a href="/">
       <!-- 头像取消懒加载，添加no-lazy -->
       
-        <img src="/images/avatar.png" alt="">
+        <img src="/images/avatar.jpg" alt="">
       
     </a>
-    <div class="nickname"><a href="/">Oranges</a></div>
+    <div class="nickname"><a href="/">huangwenlong408</a></div>
   </div>
   <div class="navbar">
     <ul>
       
         <li class="nav-item" data-path="/">
-          <a href="/">Home</a>
+          <a href="/">主页</a>
         </li>
       
-        <li class="nav-item" data-path="/archives/">
-          <a href="/archives/">Archives</a>
+        <li class="nav-item" data-path="/categories/">
+          <a href="/categories/">分类</a>
         </li>
       
         <li class="nav-item" data-path="/tags/">
-          <a href="/tags/">Tags</a>
-        </li>
-      
-        <li class="nav-item" data-path="/friends/">
-          <a href="/friends/">Friends</a>
+          <a href="/tags/">标签</a>
         </li>
       
         <li class="nav-item" data-path="/about/">
-          <a href="/about/">About</a>
+          <a href="/about/">关于我</a>
         </li>
       
     </ul>
@@ -121,6 +121,33 @@
           </h2>
         </div>
       
+      <div class="post-item" title="Git常用命令">
+        <div class="time-m-d">09-24</div>
+        <div class="title">
+          <a href="/2022/09/24/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+            <span>Git常用命令</span>
+          </a>
+        </div>
+      </div>
+    
+      <div class="post-item" title="categories">
+        <div class="time-m-d">09-24</div>
+        <div class="title">
+          <a href="/2022/09/24/demo/">
+            <span>categories</span>
+          </a>
+        </div>
+      </div>
+    
+      <div class="post-item" title="测试">
+        <div class="time-m-d">09-24</div>
+        <div class="title">
+          <a href="/2022/09/24/demo2/">
+            <span>测试</span>
+          </a>
+        </div>
+      </div>
+    
       <div class="post-item" title="Hello World">
         <div class="time-m-d">09-24</div>
         <div class="title">
@@ -139,7 +166,7 @@
     <ul>
       
         <li>
-          <a title="github" target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">
+          <a title="github" target="_blank" rel="noopener" href="https://github.com/huangwenlong408">
             <i class="iconfont icon-github"></i>
           </a>
         </li>
@@ -150,14 +177,7 @@
     
     <div class="footer-more">
       
-        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © 2022 Oranges</a>
-        
-    </div>
-  
-    
-    <div class="footer-more">
-      
-        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges | Powered by Hexo</a>
+        <a target="_blank" rel="noopener" href="https://github.com/huangwenlong408">Copyright © 2022 huangwenlong408</a>
         
     </div>
   
@@ -194,7 +214,7 @@
           </a>
         </span>
         
-          <input type="text" class="search-input" id="search-input" placeholder="Search...">
+          <input type="text" class="search-input" id="search-input" placeholder="搜索...">
         
         <span class="search-close-icon" id="search-close-icon">
           <a href="javascript: void(0)">
@@ -246,7 +266,7 @@
       'use strict';
       var $input = document.getElementById(search_id);
       var $resultContent = document.getElementById(content_id);
-      $resultContent.innerHTML = "<ul><span class='local-search-empty'>First search, index file loading, please wait...<span></ul>";
+      $resultContent.innerHTML = "<ul><span class='local-search-empty'>首次搜索，正在载入索引文件，请稍后……<span></ul>";
       $.ajax({
         // 0x01. load xml file
         url: path,
@@ -342,7 +362,7 @@
             });
             str += "</ul>";
             if (str.indexOf('<li>') === -1) {
-              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>No result<span></ul>";
+              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>没有找到内容，请尝试更换检索词。<span></ul>";
             }
             $resultContent.innerHTML = str;
           });
@@ -350,9 +370,9 @@
         error: function(xhr, status, error) {
           $resultContent.innerHTML = ""
           if (xhr.status === 404) {
-            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The search.xml file was not found, please refer to：<a href='https://github.com/zchengsite/hexo-theme-oranges#configuration' target='_black'>configuration</a><span></ul>";
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>未找到search.xml文件，具体请参考：<a href='https://github.com/zchengsite/hexo-theme-oranges#configuration' target='_black'>configuration</a><span></ul>";
           } else {
-            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The request failed, Try to refresh the page or try again later.<span></ul>";
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>请求失败，尝试重新刷新页面或稍后重试。<span></ul>";
           }
         }
       });
@@ -386,11 +406,6 @@
 
 
         
-  
-  
-<script src="/js/shares.js"></script>
-
-
 
       </div>
     </div>
