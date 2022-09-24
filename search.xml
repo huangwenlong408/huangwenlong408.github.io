@@ -4,9 +4,22 @@
   
     
     <entry>
+      <title>Hello World</title>
+      <link href="/2022/09/24/hello-world/"/>
+      <url>/2022/09/24/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Git常用命令</title>
-      <link href="/2022/09/24/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
-      <url>/2022/09/24/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+      <link href="/2022/05/28/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+      <url>/2022/05/28/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
       
         <content type="html"><![CDATA[<h1 id="修改和提交"><a href="#修改和提交" class="headerlink" title="修改和提交"></a>修改和提交</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git add &lt;fn&gt;<span class="comment">#跟踪指定文件</span></span><br><span class="line">git add .<span class="comment">#跟踪所有改动过的文件</span></span><br><span class="line">git <span class="built_in">rm</span>&lt;fn&gt;<span class="comment">#删除工作区文件</span></span><br><span class="line">git <span class="built_in">rm</span> --cached &lt;fn&gt;<span class="comment">#取消跟踪</span></span><br><span class="line">git commit -m <span class="string">&quot;111&quot;</span><span class="comment">#提交暂存区文件到本地仓库</span></span><br><span class="line">git status<span class="comment">#查看状态</span></span><br><span class="line">git diff<span class="comment">#查看区别</span></span><br></pre></td></tr></table></figure><h1 id="远程操作"><a href="#远程操作" class="headerlink" title="远程操作"></a>远程操作</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git remote -v<span class="comment">#查看远程</span></span><br><span class="line">git remote add &lt;remote&gt; &lt;url&gt; <span class="comment">#添加远程版本库</span></span><br><span class="line">git remote remove &lt;remote&gt;<span class="comment">#删除远程版本库</span></span><br><span class="line">git fetch &lt;remote&gt; &lt;branch&gt;<span class="comment">#获取远程分支到远程跟踪分支</span></span><br><span class="line">git pull &lt;remote&gt; &lt;branch&gt;<span class="comment">#获取远程分支并合并到本地分支</span></span><br><span class="line">git push &lt;remote&gt; &lt;branch&gt;<span class="comment">#推送本地分支到指定远程分支</span></span><br></pre></td></tr></table></figure><h1 id="分支操作"><a href="#分支操作" class="headerlink" title="分支操作"></a>分支操作</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git branch<span class="comment">#显示本地分支</span></span><br><span class="line">git branch -r<span class="comment">#显示远程分支</span></span><br><span class="line">git branch -a<span class="comment">#显示所有分支</span></span><br><span class="line">git checkout &lt;branch&gt;<span class="comment">#切换到某分支</span></span><br></pre></td></tr></table></figure><h1 id="撤销操作"><a href="#撤销操作" class="headerlink" title="撤销操作"></a>撤销操作</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD^<span class="comment">#回到上一版本</span></span><br><span class="line">git reset --hard &lt;ver.&gt;<span class="comment">#回到指定版本</span></span><br></pre></td></tr></table></figure><h1 id="vim操作"><a href="#vim操作" class="headerlink" title="vim操作"></a>vim操作</h1><ul><li>i进入编辑模式</li><li>esc进入操作模式</li><li>操作模式下 :wq 保存并退出vim  :q! 不保存退出</li></ul>]]></content>
       
@@ -23,30 +36,11 @@
     
     
     <entry>
-      <title>categories</title>
-      <link href="/2022/09/24/demo/"/>
-      <url>/2022/09/24/demo/</url>
+      <title>git同时配置Github和Gitee</title>
+      <link href="/2022/05/21/git%E5%90%8C%E6%97%B6%E9%85%8D%E7%BD%AEGitHub%E5%92%8CGitee/"/>
+      <url>/2022/05/21/git%E5%90%8C%E6%97%B6%E9%85%8D%E7%BD%AEGitHub%E5%92%8CGitee/</url>
       
-        <content type="html"><![CDATA[<h3 id="test"><a href="#test" class="headerlink" title="test"></a>test</h3>]]></content>
-      
-      
-      <categories>
-          
-          <category> a </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>测试</title>
-      <link href="/2022/09/24/demo2/"/>
-      <url>/2022/09/24/demo2/</url>
-      
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1 id="1-生成新的SSH-keys"><a href="#1-生成新的SSH-keys" class="headerlink" title="1.生成新的SSH keys"></a>1.生成新的SSH keys</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#keygen是key generator 密钥注册机</span></span><br><span class="line"><span class="comment">#-t 指定要创建的密钥类型</span></span><br><span class="line"><span class="comment">#-f 指定生成文件的文件名</span></span><br><span class="line"><span class="comment">#-C 添加注释</span></span><br><span class="line">ssh-keygen -t rsa -f ~/.ssh/id_rsa.github -C <span class="string">&quot;example1@github.com&quot;</span></span><br><span class="line">ssh-keygen -t rsa -f ~/.ssh/id_rsa.gitee -C <span class="string">&quot;example2@gitee.com&quot;</span></span><br></pre></td></tr></table></figure><p>不停的回车就行，完成后会在~&#x2F;.ssh目录下生成以下四个文件</p><ul><li>id_rsa.github</li><li>id_rsa.github.pub</li><li>id_rsa.gitee</li><li>id_rsa.gitee.pub</li></ul><h1 id="2-将SSH-keys添加到SSH-agent"><a href="#2-将SSH-keys添加到SSH-agent" class="headerlink" title="2.将SSH keys添加到SSH agent"></a>2.将SSH keys添加到SSH agent</h1><p>默认是读取名为id_rsa文件的密钥，这里由于我们重命名了密钥文件名，需要手动添加</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ssh-agent bash</span><br><span class="line">ssh-add ~/.ssh/id_rsa.github</span><br><span class="line">ssh-add ~/.ssh/id-rsa.gitee</span><br></pre></td></tr></table></figure><h1 id="3-配置config文件"><a href="#3-配置config文件" class="headerlink" title="3.配置config文件"></a>3.配置config文件</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#在.ssh文件夹下新建config文件</span></span><br><span class="line"><span class="built_in">touch</span> ~/.ssh/config</span><br></pre></td></tr></table></figure><p>在config文件中填写以下内容</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#Default gitHub user Self</span><br><span class="line">Host github.com</span><br><span class="line">    HostName github.com</span><br><span class="line">    User git</span><br><span class="line">    IdentityFile ~/.ssh/id_rsa.github</span><br><span class="line"></span><br><span class="line"># gitee</span><br><span class="line">Host gitee.com</span><br><span class="line">    Port 22</span><br><span class="line">    HostName gitee.com</span><br><span class="line">    User git</span><br><span class="line">    IdentityFile ~/.ssh/id_rsa.gitee</span><br></pre></td></tr></table></figure><h1 id="4-测试连接"><a href="#4-测试连接" class="headerlink" title="4.测试连接"></a>4.测试连接</h1><p>输入以下命令</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@gitee.com</span><br><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure><blockquote><p>第一次连接会让你输入yes&#x2F;no，输入yes</p></blockquote>]]></content>
       
       
       <categories>
@@ -61,12 +55,18 @@
     
     
     <entry>
-      <title>Hello World</title>
-      <link href="/2022/09/24/hello-world/"/>
-      <url>/2022/09/24/hello-world/</url>
+      <title>SSH原理</title>
+      <link href="/2022/05/21/SSH%E5%8E%9F%E7%90%86/"/>
+      <url>/2022/05/21/SSH%E5%8E%9F%E7%90%86/</url>
       
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+        <content type="html"><![CDATA[<h1 id="什么是SSH"><a href="#什么是SSH" class="headerlink" title="什么是SSH"></a>什么是SSH</h1><ol><li>SSH是secure shell的简称，是一种加密的网络传输协议。</li><li>SSH以非对称方式实现身份验证，主要有以下两种：</li></ol><ul><li>基于密码的安全验证</li><li>基于密钥的安全验证</li></ul><h1 id="Git与GitHub、Gitee之间的通信"><a href="#Git与GitHub、Gitee之间的通信" class="headerlink" title="Git与GitHub、Gitee之间的通信"></a>Git与GitHub、Gitee之间的通信</h1><blockquote><p>基于密钥的安全验证</p></blockquote><p>首先在客户端配置如下两对公钥和私钥，带.pub后缀名的为公钥，</p><ul><li>id_rsa.github</li><li>id_rsa.github.pub</li><li>id_rsa.gitee</li><li>id_rsa.gitee.pub</li></ul><p>然后将公钥复制一份到服务端（这里指Github和Gitee网站），客户端向服务端请求验证身份，服务端随机生成字符串，然后用服务端保留的公钥加密，将加密的结果传给客户端，“质询”客户端身份，客户端用私钥解密，然后回传给服务器，服务器比对一致后，确认身份校验通过，然后开始数据传输。</p>]]></content>
       
+      
+      <categories>
+          
+          <category> Git </category>
+          
+      </categories>
       
       
     </entry>
