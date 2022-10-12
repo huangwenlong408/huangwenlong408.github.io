@@ -11,9 +11,9 @@
   
   <title>
     
-      Category 
+      Git初级教程——保存更改 
       
-       : Git
+      
       |
     
      黄文龙的博客
@@ -106,75 +106,188 @@
 
 
       <div class="flex-container">
-        <!-- 标签详情页，展示某个标签下的文章列表，url形式：https://yoursite/tags/某个标签/ -->
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
 
-<div class="container category-details">
-  <div class="content-title">
-    <h2>
-      <span>Git</span>
-    </h2>
+
+  <!-- LaTex Display -->
+
+  
+    <script async type="text/javascript" src="/plugins/mathjax/tex-chtml.js"></script>
+  
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    }
+  </script>
+
+
+
+
+
+  <!-- clipboard -->
+
+  
+    <script async type="text/javascript" src="/plugins/clipboard.min.js"></script>
+  
+  
+<script src="/js/codeCopy.js"></script>
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">Git初级教程——保存更改</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
+          2022-10-12 15:04:11
+        </span>
+        
+              <span class="post-categories">
+                <i class="iconfont icon-bookmark" title="分类"></i>
+                
+                <span class="span--category">
+                  <a href="/categories/Git/" title="Git">
+                    <b>#</b> Git
+                  </a>
+                </span>
+                
+              </span>
+          
+              <span class="post-tags">
+                <i class="iconfont icon-tags mr-10" title="标签"></i>
+                
+                <span class="span--tag mr-8">
+                  <a href="/tags/Git%E5%88%9D%E7%BA%A7%E6%95%99%E7%A8%8B/" title="Git初级教程">
+                    #Git初级教程
+                  </a>
+                </span>
+                
+              </span>
+          
+      </div>
+      <div class="markdown-body">
+        <h1 id="git-add"><a href="#git-add" class="headerlink" title="git add"></a>git add</h1><p>该命令将工作目录中的更改添加到暂存区</p>
+<ul>
+<li>可以使用<code>git add &lt;filename&gt;</code> 来添加指定文件</li>
+<li>也可以使用<code>git add . </code>添加所有文件</li>
+</ul>
+<h1 id="git-commit"><a href="#git-commit" class="headerlink" title="git commit"></a>git commit</h1><p>保存当前所有添加到暂存区的文件</p>
+<ul>
+<li>可以使用<code>git commit -m &quot;commit message&quot;</code>提交消息</li>
+</ul>
+<h1 id="git-stash"><a href="#git-stash" class="headerlink" title="git stash"></a>git stash</h1><p>将当前未提交的修改，（即工作区的修改和暂存区的修改)先暂时储藏起来</p>
+<ul>
+<li>使用<code>git stash</code>来隐藏当前的修改</li>
+<li>使用<code>git stash pop</code>取出最近一次隐藏的修改</li>
+<li>使用<code>git stash apply stash@&#123;index&#125;</code>取出指定index的隐藏的修改</li>
+</ul>
+<h1 id="git-diff"><a href="#git-diff" class="headerlink" title="git diff"></a>git diff</h1><p>用于比较Git中提交的更改，通常它与<code>git status</code>和<code>git log</code>命令结合使用</p>
+<ul>
+<li>使用<code>git diff &lt;file&gt;</code>比较当前文件和暂存区文件差异</li>
+<li>使用<code>git diff &lt;id1&gt;&lt;id2&gt;</code>比较两次提交之间的差异</li>
+<li>使用<code>git diff &lt;branch1&gt; &lt;branch2&gt;</code>比较两个分支的差异</li>
+</ul>
+
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2022/10/10/Git%E5%88%9D%E7%BA%A7-%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>上一页</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
+              2022-10-12 15:04:11
+            </span>
+            
+                  <span class="post-categories">
+                    <i class="iconfont icon-bookmark" title="分类"></i>
+                    
+                    <span class="span--category">
+                      <a href="/categories/Git/" title="Git">
+                        <b>#</b> Git
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+                  <span class="post-tags">
+                    <i class="iconfont icon-tags mr-10" title="标签"></i>
+                    
+                    <span class="span--tag mr-8">
+                      <a href="/tags/Git%E5%88%9D%E7%BA%A7%E6%95%99%E7%A8%8B/" title="Git初级教程">
+                        #Git初级教程
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+          </div>
+          <div class="post-foot-prev">
+            
+              <a href="/2022/10/12/Git%E5%88%9D%E7%BA%A7-%E6%A3%80%E6%9F%A5%E4%BB%93%E5%BA%93/" target="_self">
+                <span>下一页</span>
+                <i class="iconfont icon-chevronright"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+    </div>
+    
+  <div id="btn-catalog" class="btn-catalog">
+    <i class="iconfont icon-catalog"></i>
   </div>
-  
-    <div class="post-list">
-      <div class="post-item" title="Git初级教程——保存更改">
-        <span class="time-m-d">2022-10-12</span>
-        <a href="/2022/10/12/Git%E5%88%9D%E7%BA%A7-%E6%A3%80%E6%9F%A5%E4%BB%93%E5%BA%93/">
-          <span>Git初级教程——保存更改</span>
-        </a>
-      </div>
+  <div class="post-catalog hidden" id="catalog">
+    <div class="title">目录</div>
+    <div class="catalog-content">
+      
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#git-add"><span class="toc-text">git add</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#git-commit"><span class="toc-text">git commit</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#git-stash"><span class="toc-text">git stash</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#git-diff"><span class="toc-text">git diff</span></a></li></ol>
+      
     </div>
+  </div>
+
   
-    <div class="post-list">
-      <div class="post-item" title="Git初级教程——保存更改">
-        <span class="time-m-d">2022-10-12</span>
-        <a href="/2022/10/12/Git%E5%88%9D%E7%BA%A7-%E4%BF%9D%E5%AD%98%E6%9B%B4%E6%94%B9/">
-          <span>Git初级教程——保存更改</span>
-        </a>
-      </div>
-    </div>
-  
-    <div class="post-list">
-      <div class="post-item" title="Git初级教程——新建仓库">
-        <span class="time-m-d">2022-10-10</span>
-        <a href="/2022/10/10/Git%E5%88%9D%E7%BA%A7-%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93/">
-          <span>Git初级教程——新建仓库</span>
-        </a>
-      </div>
-    </div>
-  
-    <div class="post-list">
-      <div class="post-item" title="Git常用命令">
-        <span class="time-m-d">2022-05-28</span>
-        <a href="/2022/05/28/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
-          <span>Git常用命令</span>
-        </a>
-      </div>
-    </div>
-  
-    <div class="post-list">
-      <div class="post-item" title="git同时配置Github和Gitee">
-        <span class="time-m-d">2022-05-21</span>
-        <a href="/2022/05/21/git%E5%90%8C%E6%97%B6%E9%85%8D%E7%BD%AEGitHub%E5%92%8CGitee/">
-          <span>git同时配置Github和Gitee</span>
-        </a>
-      </div>
-    </div>
-  
-    <div class="post-list">
-      <div class="post-item" title="SSH原理">
-        <span class="time-m-d">2022-05-21</span>
-        <a href="/2022/05/21/SSH%E5%8E%9F%E7%90%86/">
-          <span>SSH原理</span>
-        </a>
-      </div>
-    </div>
-  
-  <nav class="post-navigation">
+<script src="/js/catalog.js"></script>
+
+
+
+
     
-    <span class="page-num">1 / 1</span>
+      <div class="comments-container">
+        
+
+
+
+
+
+
+
+      </div>
     
-  </nav>
-</div>
+  </div>
+
 
         
 <div class="footer">

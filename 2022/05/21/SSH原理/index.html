@@ -25,7 +25,7 @@
   
 
   <!-- Raleway-Font -->
-  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet"> -->
 
   <!-- hexo site css -->
   <link rel="stylesheet" href="/css/main.css" />
@@ -142,19 +142,123 @@
 
 
   
-  <!-- 分类页 url形式：https://yoursite/categories/ -->
-  <div class="container category-index">
-    <div>
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a><span class="category-list-count">3</span></li></ul>
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">SSH原理</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
+          2022-05-21 14:50:40
+        </span>
+        
+              <span class="post-categories">
+                <i class="iconfont icon-bookmark" title="分类"></i>
+                
+                <span class="span--category">
+                  <a href="/categories/Git/" title="Git">
+                    <b>#</b> Git
+                  </a>
+                </span>
+                
+              </span>
+          
+      </div>
+      <div class="markdown-body">
+        <h1 id="什么是SSH"><a href="#什么是SSH" class="headerlink" title="什么是SSH"></a>什么是SSH</h1><ol>
+<li>SSH是secure shell的简称，是一种加密的网络传输协议。</li>
+<li>SSH以非对称方式实现身份验证，主要有以下两种：</li>
+</ol>
+<ul>
+<li>基于密码的安全验证</li>
+<li>基于密钥的安全验证</li>
+</ul>
+<h1 id="Git与GitHub、Gitee之间的通信"><a href="#Git与GitHub、Gitee之间的通信" class="headerlink" title="Git与GitHub、Gitee之间的通信"></a>Git与GitHub、Gitee之间的通信</h1><blockquote>
+<p>基于密钥的安全验证</p>
+</blockquote>
+<p>首先在客户端配置如下两对公钥和私钥，带.pub后缀名的为公钥，</p>
+<ul>
+<li>id_rsa.github</li>
+<li>id_rsa.github.pub</li>
+<li>id_rsa.gitee</li>
+<li>id_rsa.gitee.pub</li>
+</ul>
+<p>然后将公钥复制一份到服务端（这里指Github和Gitee网站），客户端向服务端请求验证身份，服务端随机生成字符串，然后用服务端保留的公钥加密，将加密的结果传给客户端，“质询”客户端身份，客户端用私钥解密，然后回传给服务器，服务器比对一致后，确认身份校验通过，然后开始数据传输。</p>
+
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
+              2022-05-21 14:50:40
+            </span>
+            
+                  <span class="post-categories">
+                    <i class="iconfont icon-bookmark" title="分类"></i>
+                    
+                    <span class="span--category">
+                      <a href="/categories/Git/" title="Git">
+                        <b>#</b> Git
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+          </div>
+          <div class="post-foot-prev">
+            
+              <a href="/2022/05/21/git%E5%90%8C%E6%97%B6%E9%85%8D%E7%BD%AEGitHub%E5%92%8CGitee/" target="_self">
+                <span>下一页</span>
+                <i class="iconfont icon-chevronright"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+    </div>
+    
+  <div id="btn-catalog" class="btn-catalog">
+    <i class="iconfont icon-catalog"></i>
+  </div>
+  <div class="post-catalog hidden" id="catalog">
+    <div class="title">目录</div>
+    <div class="catalog-content">
+      
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFSSH"><span class="toc-text">什么是SSH</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Git%E4%B8%8EGitHub%E3%80%81Gitee%E4%B9%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1"><span class="toc-text">Git与GitHub、Gitee之间的通信</span></a></li></ol>
+      
     </div>
   </div>
-  
 
   
+<script src="/js/catalog.js"></script>
 
-  
 
-  
+
+
+    
+      <div class="comments-container">
+        
+
+
+
+
+
+
+
+      </div>
+    
+  </div>
+
 
         
 <div class="footer">

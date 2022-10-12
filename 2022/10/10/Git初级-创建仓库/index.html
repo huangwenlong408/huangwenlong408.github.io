@@ -11,9 +11,9 @@
   
   <title>
     
-      Category 
+      Git初级教程——新建仓库 
       
-       : Git
+      
       |
     
      黄文龙的博客
@@ -106,75 +106,191 @@
 
 
       <div class="flex-container">
-        <!-- 标签详情页，展示某个标签下的文章列表，url形式：https://yoursite/tags/某个标签/ -->
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
 
-<div class="container category-details">
-  <div class="content-title">
-    <h2>
-      <span>Git</span>
-    </h2>
+
+  <!-- LaTex Display -->
+
+  
+    <script async type="text/javascript" src="/plugins/mathjax/tex-chtml.js"></script>
+  
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    }
+  </script>
+
+
+
+
+
+  <!-- clipboard -->
+
+  
+    <script async type="text/javascript" src="/plugins/clipboard.min.js"></script>
+  
+  
+<script src="/js/codeCopy.js"></script>
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">Git初级教程——新建仓库</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
+          2022-10-10 14:21:42
+        </span>
+        
+              <span class="post-categories">
+                <i class="iconfont icon-bookmark" title="分类"></i>
+                
+                <span class="span--category">
+                  <a href="/categories/Git/" title="Git">
+                    <b>#</b> Git
+                  </a>
+                </span>
+                
+              </span>
+          
+              <span class="post-tags">
+                <i class="iconfont icon-tags mr-10" title="标签"></i>
+                
+                <span class="span--tag mr-8">
+                  <a href="/tags/Git%E5%88%9D%E7%BA%A7%E6%95%99%E7%A8%8B/" title="Git初级教程">
+                    #Git初级教程
+                  </a>
+                </span>
+                
+              </span>
+          
+      </div>
+      <div class="markdown-body">
+        <h1 id="git-init"><a href="#git-init" class="headerlink" title="git init"></a>git init</h1><p>该命令用于生成新的空 Git 存储库或重新初始化现有存储库。执行命令后，创建了一个 .git 子目录，其中包括生成新 Git 存储库所需的元数据。</p>
+<ul>
+<li>cd进入项目所在的目录下，执行<code>git init</code>命令</li>
+<li>在指定目录下执行 <code>git init demo</code>，会在该目录下新建一个 demo 的文件夹，并在文件夹下生成 .git 文件</li>
+</ul>
+<h1 id="git-clone"><a href="#git-clone" class="headerlink" title="git clone"></a>git clone</h1><p>这是最常见的命令之一，它将现有存储库中的内容克隆到初始化的新目录中，也可以克隆远程仓库的内容。</p>
+<ul>
+<li><p>通过SSH克隆项目</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone ssh://user@server/project.git</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过HTTPS克隆项目</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone http://example.com/gitproject.git</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用相对路径克隆本地项目</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone /opt/git/project.git</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="git-config"><a href="#git-config" class="headerlink" title="git config"></a>git config</h1><p>显示或设定配置参数</p>
+<ul>
+<li><p>配置用户名和用户邮箱</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config user.name jack</span><br><span class="line">git config user.email 12306@mail.com</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>显示当前配置</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --list</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2022/09/24/hello-world/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>上一页</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
+              2022-10-10 14:21:42
+            </span>
+            
+                  <span class="post-categories">
+                    <i class="iconfont icon-bookmark" title="分类"></i>
+                    
+                    <span class="span--category">
+                      <a href="/categories/Git/" title="Git">
+                        <b>#</b> Git
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+                  <span class="post-tags">
+                    <i class="iconfont icon-tags mr-10" title="标签"></i>
+                    
+                    <span class="span--tag mr-8">
+                      <a href="/tags/Git%E5%88%9D%E7%BA%A7%E6%95%99%E7%A8%8B/" title="Git初级教程">
+                        #Git初级教程
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+          </div>
+          <div class="post-foot-prev">
+            
+              <a href="/2022/10/12/Git%E5%88%9D%E7%BA%A7-%E4%BF%9D%E5%AD%98%E6%9B%B4%E6%94%B9/" target="_self">
+                <span>下一页</span>
+                <i class="iconfont icon-chevronright"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+    </div>
+    
+  <div id="btn-catalog" class="btn-catalog">
+    <i class="iconfont icon-catalog"></i>
   </div>
-  
-    <div class="post-list">
-      <div class="post-item" title="Git初级教程——保存更改">
-        <span class="time-m-d">2022-10-12</span>
-        <a href="/2022/10/12/Git%E5%88%9D%E7%BA%A7-%E6%A3%80%E6%9F%A5%E4%BB%93%E5%BA%93/">
-          <span>Git初级教程——保存更改</span>
-        </a>
-      </div>
+  <div class="post-catalog hidden" id="catalog">
+    <div class="title">目录</div>
+    <div class="catalog-content">
+      
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#git-init"><span class="toc-text">git init</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#git-clone"><span class="toc-text">git clone</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#git-config"><span class="toc-text">git config</span></a></li></ol>
+      
     </div>
+  </div>
+
   
-    <div class="post-list">
-      <div class="post-item" title="Git初级教程——保存更改">
-        <span class="time-m-d">2022-10-12</span>
-        <a href="/2022/10/12/Git%E5%88%9D%E7%BA%A7-%E4%BF%9D%E5%AD%98%E6%9B%B4%E6%94%B9/">
-          <span>Git初级教程——保存更改</span>
-        </a>
-      </div>
-    </div>
-  
-    <div class="post-list">
-      <div class="post-item" title="Git初级教程——新建仓库">
-        <span class="time-m-d">2022-10-10</span>
-        <a href="/2022/10/10/Git%E5%88%9D%E7%BA%A7-%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93/">
-          <span>Git初级教程——新建仓库</span>
-        </a>
-      </div>
-    </div>
-  
-    <div class="post-list">
-      <div class="post-item" title="Git常用命令">
-        <span class="time-m-d">2022-05-28</span>
-        <a href="/2022/05/28/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
-          <span>Git常用命令</span>
-        </a>
-      </div>
-    </div>
-  
-    <div class="post-list">
-      <div class="post-item" title="git同时配置Github和Gitee">
-        <span class="time-m-d">2022-05-21</span>
-        <a href="/2022/05/21/git%E5%90%8C%E6%97%B6%E9%85%8D%E7%BD%AEGitHub%E5%92%8CGitee/">
-          <span>git同时配置Github和Gitee</span>
-        </a>
-      </div>
-    </div>
-  
-    <div class="post-list">
-      <div class="post-item" title="SSH原理">
-        <span class="time-m-d">2022-05-21</span>
-        <a href="/2022/05/21/SSH%E5%8E%9F%E7%90%86/">
-          <span>SSH原理</span>
-        </a>
-      </div>
-    </div>
-  
-  <nav class="post-navigation">
+<script src="/js/catalog.js"></script>
+
+
+
+
     
-    <span class="page-num">1 / 1</span>
+      <div class="comments-container">
+        
+
+
+
+
+
+
+
+      </div>
     
-  </nav>
-</div>
+  </div>
+
 
         
 <div class="footer">

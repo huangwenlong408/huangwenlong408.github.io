@@ -4,6 +4,81 @@
   
     
     <entry>
+      <title>Git初级教程——保存更改</title>
+      <link href="/2022/10/12/Git%E5%88%9D%E7%BA%A7-%E6%A3%80%E6%9F%A5%E4%BB%93%E5%BA%93/"/>
+      <url>/2022/10/12/Git%E5%88%9D%E7%BA%A7-%E6%A3%80%E6%9F%A5%E4%BB%93%E5%BA%93/</url>
+      
+        <content type="html"><![CDATA[<h1 id="git-status"><a href="#git-status" class="headerlink" title="git status"></a>git status</h1><p>显示工作区和暂存区的状态</p><ul><li>使用<code>git status</code>查看</li></ul><h1 id="git-log"><a href="#git-log" class="headerlink" title="git log"></a>git log</h1><p>显示提交的历史</p><ul><li>使用<code>git log</code>显示整个提交历史，如果输出占满屏幕使用<code>q</code>键退出</li><li>使用<code>git log -oneline</code>将每个提交放在一行上</li></ul><h1 id="git-blame"><a href="#git-blame" class="headerlink" title="git blame"></a>git blame</h1><p>追溯一个指定文件的历史修改记录</p><ul><li>使用<code>git blame &lt;filename&gt;</code></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Git </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Git初级教程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Git初级教程——保存更改</title>
+      <link href="/2022/10/12/Git%E5%88%9D%E7%BA%A7-%E4%BF%9D%E5%AD%98%E6%9B%B4%E6%94%B9/"/>
+      <url>/2022/10/12/Git%E5%88%9D%E7%BA%A7-%E4%BF%9D%E5%AD%98%E6%9B%B4%E6%94%B9/</url>
+      
+        <content type="html"><![CDATA[<h1 id="git-add"><a href="#git-add" class="headerlink" title="git add"></a>git add</h1><p>该命令将工作目录中的更改添加到暂存区</p><ul><li>可以使用<code>git add &lt;filename&gt;</code> 来添加指定文件</li><li>也可以使用<code>git add . </code>添加所有文件</li></ul><h1 id="git-commit"><a href="#git-commit" class="headerlink" title="git commit"></a>git commit</h1><p>保存当前所有添加到暂存区的文件</p><ul><li>可以使用<code>git commit -m &quot;commit message&quot;</code>提交消息</li></ul><h1 id="git-stash"><a href="#git-stash" class="headerlink" title="git stash"></a>git stash</h1><p>将当前未提交的修改，（即工作区的修改和暂存区的修改)先暂时储藏起来</p><ul><li>使用<code>git stash</code>来隐藏当前的修改</li><li>使用<code>git stash pop</code>取出最近一次隐藏的修改</li><li>使用<code>git stash apply stash@&#123;index&#125;</code>取出指定index的隐藏的修改</li></ul><h1 id="git-diff"><a href="#git-diff" class="headerlink" title="git diff"></a>git diff</h1><p>用于比较Git中提交的更改，通常它与<code>git status</code>和<code>git log</code>命令结合使用</p><ul><li>使用<code>git diff &lt;file&gt;</code>比较当前文件和暂存区文件差异</li><li>使用<code>git diff &lt;id1&gt;&lt;id2&gt;</code>比较两次提交之间的差异</li><li>使用<code>git diff &lt;branch1&gt; &lt;branch2&gt;</code>比较两个分支的差异</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Git </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Git初级教程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Git初级教程——新建仓库</title>
+      <link href="/2022/10/10/Git%E5%88%9D%E7%BA%A7-%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93/"/>
+      <url>/2022/10/10/Git%E5%88%9D%E7%BA%A7-%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93/</url>
+      
+        <content type="html"><![CDATA[<h1 id="git-init"><a href="#git-init" class="headerlink" title="git init"></a>git init</h1><p>该命令用于生成新的空 Git 存储库或重新初始化现有存储库。执行命令后，创建了一个 .git 子目录，其中包括生成新 Git 存储库所需的元数据。</p><ul><li>cd进入项目所在的目录下，执行<code>git init</code>命令</li><li>在指定目录下执行 <code>git init demo</code>，会在该目录下新建一个 demo 的文件夹，并在文件夹下生成 .git 文件</li></ul><h1 id="git-clone"><a href="#git-clone" class="headerlink" title="git clone"></a>git clone</h1><p>这是最常见的命令之一，它将现有存储库中的内容克隆到初始化的新目录中，也可以克隆远程仓库的内容。</p><ul><li><p>通过SSH克隆项目</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone ssh://user@server/project.git</span><br></pre></td></tr></table></figure></li><li><p>通过HTTPS克隆项目</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone http://example.com/gitproject.git</span><br></pre></td></tr></table></figure></li><li><p>使用相对路径克隆本地项目</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone /opt/git/project.git</span><br></pre></td></tr></table></figure></li></ul><h1 id="git-config"><a href="#git-config" class="headerlink" title="git config"></a>git config</h1><p>显示或设定配置参数</p><ul><li><p>配置用户名和用户邮箱</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config user.name jack</span><br><span class="line">git config user.email 12306@mail.com</span><br></pre></td></tr></table></figure></li><li><p>显示当前配置</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --list</span><br></pre></td></tr></table></figure></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Git </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Git初级教程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2022/09/24/hello-world/"/>
       <url>/2022/09/24/hello-world/</url>
@@ -30,6 +105,12 @@
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> Git常用命令 </tag>
+            
+        </tags>
       
     </entry>
     
