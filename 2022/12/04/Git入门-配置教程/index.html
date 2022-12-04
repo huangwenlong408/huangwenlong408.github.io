@@ -11,11 +11,6 @@
   
   <title>
     
-      git同时配置Github和Gitee 
-      
-      
-      |
-    
      黄文龙的博客
   </title>
 
@@ -151,51 +146,59 @@
   <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
   <div class="container post-details" id="post-details">
     <div class="post-content">
-      <div class="post-title">git同时配置Github和Gitee</div>
+      <div class="post-title"></div>
       <div class="post-attach">
         <span class="post-pubtime">
           <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
-          2022-05-21 17:01:32
+          2022-12-04 21:26:42
         </span>
         
-              <span class="post-categories">
-                <i class="iconfont icon-bookmark" title="分类"></i>
-                
-                <span class="span--category">
-                  <a href="/categories/Git/" title="Git">
-                    <b>#</b> Git
-                  </a>
-                </span>
-                
-              </span>
-          
       </div>
       <div class="markdown-body">
-        <h1 id="1-生成新的SSH-keys"><a href="#1-生成新的SSH-keys" class="headerlink" title="1.生成新的SSH keys"></a>1.生成新的SSH keys</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#keygen是key generator 密钥注册机</span></span><br><span class="line"><span class="comment">#-t 指定要创建的密钥类型</span></span><br><span class="line"><span class="comment">#-f 指定生成文件的文件名</span></span><br><span class="line"><span class="comment">#-C 添加注释</span></span><br><span class="line">ssh-keygen -t rsa -f ~/.ssh/id_rsa.github -C <span class="string">&quot;example1@github.com&quot;</span></span><br><span class="line">ssh-keygen -t rsa -f ~/.ssh/id_rsa.gitee -C <span class="string">&quot;example2@gitee.com&quot;</span></span><br></pre></td></tr></table></figure>
+        <h1 id="1-生成新的SSH-keys"><a href="#1-生成新的SSH-keys" class="headerlink" title="1.生成新的SSH keys"></a>1.生成新的SSH keys</h1><ul>
+<li><p>在桌面点击右键-&gt;Git Bash Here</p>
+</li>
+<li><p>在git bash中输入以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#keygen是key generator(密钥注册机)</span></span><br><span class="line"><span class="comment">#-t 指定要创建的密钥类型</span></span><br><span class="line"><span class="comment">#-f 指定生成文件的文件名</span></span><br><span class="line"><span class="comment">#-C 添加注释</span></span><br><span class="line">ssh-keygen -t rsa -f ~/.ssh/id_rsa.github -C <span class="string">&quot;example1@github.com&quot;</span></span><br><span class="line">ssh-keygen -t rsa -f ~/.ssh/id_rsa.gitee -C <span class="string">&quot;example2@gitee.com&quot;</span></span><br></pre></td></tr></table></figure>
 <p>不停的回车就行，完成后会在~&#x2F;.ssh目录下生成以下四个文件</p>
-<ul>
-<li>id_rsa.github</li>
-<li>id_rsa.github.pub</li>
-<li>id_rsa.gitee</li>
-<li>id_rsa.gitee.pub</li>
+</li>
+<li><p>id_rsa.github</p>
+</li>
+<li><p>id_rsa.github.pub</p>
+</li>
+<li><p>id_rsa.gitee</p>
+</li>
+<li><p>id_rsa.gitee.pub</p>
+</li>
 </ul>
-<h1 id="2-将SSH-keys添加到SSH-agent"><a href="#2-将SSH-keys添加到SSH-agent" class="headerlink" title="2.将SSH keys添加到SSH agent"></a>2.将SSH keys添加到SSH agent</h1><p>默认是读取名为id_rsa文件的密钥，这里由于我们重命名了密钥文件名，需要手动添加</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ssh-agent bash</span><br><span class="line">ssh-add ~/.ssh/id_rsa.github</span><br><span class="line">ssh-add ~/.ssh/id-rsa.gitee</span><br></pre></td></tr></table></figure>
-<h1 id="3-配置config文件"><a href="#3-配置config文件" class="headerlink" title="3.配置config文件"></a>3.配置config文件</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#在.ssh文件夹下新建config文件</span></span><br><span class="line"><span class="built_in">touch</span> ~/.ssh/config</span><br></pre></td></tr></table></figure>
-<p>在config文件中填写以下内容</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#Default gitHub user Self</span><br><span class="line">Host github.com</span><br><span class="line">    HostName github.com</span><br><span class="line">    User git</span><br><span class="line">    IdentityFile ~/.ssh/id_rsa.github</span><br><span class="line"></span><br><span class="line"># gitee</span><br><span class="line">Host gitee.com</span><br><span class="line">    Port 22</span><br><span class="line">    HostName gitee.com</span><br><span class="line">    User git</span><br><span class="line">    IdentityFile ~/.ssh/id_rsa.gitee</span><br></pre></td></tr></table></figure>
-<h1 id="4-测试连接"><a href="#4-测试连接" class="headerlink" title="4.测试连接"></a>4.测试连接</h1><p>输入以下命令</p>
+<h1 id="2-将SSH-keys添加到SSH-agent"><a href="#2-将SSH-keys添加到SSH-agent" class="headerlink" title="2.将SSH keys添加到SSH agent"></a>2.将SSH keys添加到SSH agent</h1><ul>
+<li>默认是读取名为id_rsa文件的密钥，这里由于我们重命名了密钥文件名，需要手动添加</li>
+<li>继续在git bash中输入以下命令：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ssh-agent bash</span><br><span class="line">ssh-add ~/.ssh/id_rsa.github</span><br><span class="line">ssh-add ~/.ssh/id-rsa.gitee</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="3-配置config文件"><a href="#3-配置config文件" class="headerlink" title="3.配置config文件"></a>3.配置config文件</h1><ul>
+<li><p>在.ssh文件夹下新建config文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">touch</span> ~/.ssh/config</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用记事本打开config文件，在文件中填写以下内容并保存</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#Default gitHub user Self</span><br><span class="line">Host github.com</span><br><span class="line">    HostName github.com</span><br><span class="line">    User git</span><br><span class="line">    IdentityFile ~/.ssh/id_rsa.github</span><br><span class="line"></span><br><span class="line"># gitee</span><br><span class="line">Host gitee.com</span><br><span class="line">    Port 22</span><br><span class="line">    HostName gitee.com</span><br><span class="line">    User git</span><br><span class="line">    IdentityFile ~/.ssh/id_rsa.gitee</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="4-测试连接"><a href="#4-测试连接" class="headerlink" title="4.测试连接"></a>4.测试连接</h1><ul>
+<li><p>分别输入以下两行命令测试与Github和Gitee站点的连接</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@gitee.com</span><br><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>第一次连接会让你输入yes&#x2F;no，输入yes</p>
-</blockquote>
+</li>
+<li><p>第一次连接会让你输 yes&#x2F;no 输入yes后可以看到以下消息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi huangwenlong408! You<span class="string">&#x27;ve successfully authenticated, but GitHub does not provide shell access.</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>恭喜完成配置</p>
+</li>
+</ul>
 
       </div>
       
         <div class="prev-or-next">
           <div class="post-foot-next">
             
-              <a href="/2022/05/21/SSH%E5%8E%9F%E7%90%86/" target="_self">
+              <a href="/2022/12/04/Git%E5%85%A5%E9%97%A8-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" target="_self">
                 <i class="iconfont icon-chevronleft"></i>
                 <span>上一页</span>
               </a>
@@ -204,27 +207,11 @@
           <div class="post-attach">
             <span class="post-pubtime">
               <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
-              2022-05-21 17:01:32
+              2022-12-04 21:26:42
             </span>
             
-                  <span class="post-categories">
-                    <i class="iconfont icon-bookmark" title="分类"></i>
-                    
-                    <span class="span--category">
-                      <a href="/categories/Git/" title="Git">
-                        <b>#</b> Git
-                      </a>
-                    </span>
-                    
-                  </span>
-              
           </div>
           <div class="post-foot-prev">
-            
-              <a href="/2022/05/28/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" target="_self">
-                <span>下一页</span>
-                <i class="iconfont icon-chevronright"></i>
-              </a>
             
           </div>
         </div>

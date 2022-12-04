@@ -11,11 +11,6 @@
   
   <title>
     
-      SSH原理 
-      
-      
-      |
-    
      黄文龙的博客
   </title>
 
@@ -151,73 +146,38 @@
   <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
   <div class="container post-details" id="post-details">
     <div class="post-content">
-      <div class="post-title">SSH原理</div>
+      <div class="post-title"></div>
       <div class="post-attach">
         <span class="post-pubtime">
           <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
-          2022-05-21 14:50:40
+          2022-12-04 21:26:26
         </span>
         
-              <span class="post-categories">
-                <i class="iconfont icon-bookmark" title="分类"></i>
-                
-                <span class="span--category">
-                  <a href="/categories/Git/" title="Git">
-                    <b>#</b> Git
-                  </a>
-                </span>
-                
-              </span>
-          
       </div>
       <div class="markdown-body">
-        <h1 id="什么是SSH"><a href="#什么是SSH" class="headerlink" title="什么是SSH"></a>什么是SSH</h1><ol>
-<li>SSH是secure shell的简称，是一种加密的网络传输协议。</li>
-<li>SSH以非对称方式实现身份验证，主要有以下两种：</li>
-</ol>
-<ul>
-<li>基于密码的安全验证</li>
-<li>基于密钥的安全验证</li>
-</ul>
-<h1 id="Git与GitHub、Gitee之间的通信"><a href="#Git与GitHub、Gitee之间的通信" class="headerlink" title="Git与GitHub、Gitee之间的通信"></a>Git与GitHub、Gitee之间的通信</h1><blockquote>
-<p>基于密钥的安全验证</p>
-</blockquote>
-<p>首先在客户端配置如下两对公钥和私钥，带.pub后缀名的为公钥，</p>
-<ul>
-<li>id_rsa.github</li>
-<li>id_rsa.github.pub</li>
-<li>id_rsa.gitee</li>
-<li>id_rsa.gitee.pub</li>
-</ul>
-<p>然后将公钥复制一份到服务端（这里指Github和Gitee网站），客户端向服务端请求验证身份，服务端随机生成字符串，然后用服务端保留的公钥加密，将加密的结果传给客户端，“质询”客户端身份，客户端用私钥解密，然后回传给服务器，服务器比对一致后，确认身份校验通过，然后开始数据传输。</p>
+        <p>首先进入Git官方下载页面 <a target="_blank" rel="noopener" href="https://git-scm.com/downloads">https://git-scm.com/downloads</a><br>根据电脑操作系统下载对应的Git安装包，这里以64位windows10为例<br><img src="https://cdn.nlark.com/yuque/0/2022/png/25561868/1668567064897-8fafc0ec-43fa-4af5-a282-cdc91d53acd0.png#averageHue=%23f1f0ee&clientId=u1679623c-4fc9-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=394&id=u639921b6&margin=%5Bobject%20Object%5D&name=image.png&originHeight=394&originWidth=501&originalType=binary&ratio=1&rotation=0&showTitle=false&size=24912&status=done&style=none&taskId=ubf9b0785-7f5e-4a07-9231-f79ee020fea&title=&width=501" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2022/png/25561868/1668567112026-614081ac-64a5-46cb-96f8-5675b02ec731.png#averageHue=%23f0efee&clientId=u1679623c-4fc9-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=394&id=u856b4e99&margin=%5Bobject%20Object%5D&name=image.png&originHeight=394&originWidth=501&originalType=binary&ratio=1&rotation=0&showTitle=false&size=17965&status=done&style=none&taskId=u31bb3b1a-6f53-42e3-ac7f-897ffbe8c77&title=&width=501" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2022/png/25561868/1668567337690-bbc9460a-2b1d-4006-b8b3-42926d21b774.png#averageHue=%23f1efed&clientId=u1679623c-4fc9-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=394&id=ud4e9b8f5&margin=%5Bobject%20Object%5D&name=image.png&originHeight=394&originWidth=501&originalType=binary&ratio=1&rotation=0&showTitle=false&size=23712&status=done&style=none&taskId=ufdccbc49-9a63-4a87-805d-61e50730cb6&title=&width=501" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2022/png/25561868/1668567371184-2690a613-c584-458d-b429-e83ef2cb4210.png#averageHue=%23f0efee&clientId=u1679623c-4fc9-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=394&id=ue523402f&margin=%5Bobject%20Object%5D&name=image.png&originHeight=394&originWidth=501&originalType=binary&ratio=1&rotation=0&showTitle=false&size=17347&status=done&style=none&taskId=u432dfa78-a8fa-4a6b-8f56-674019872d2&title=&width=501" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2022/png/25561868/1668567405950-b797a96b-91d8-413d-85c7-5fd66f1cb570.png#averageHue=%23edecea&clientId=u1679623c-4fc9-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=394&id=u33a850e4&margin=%5Bobject%20Object%5D&name=image.png&originHeight=394&originWidth=501&originalType=binary&ratio=1&rotation=0&showTitle=false&size=23083&status=done&style=none&taskId=u1c34c56e-4d7a-4b8d-a659-7e446fd8cc9&title=&width=501" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2022/png/25561868/1668567702724-d51f499a-b989-4003-a954-282ca39f4e0b.png#averageHue=%23edebea&clientId=u1679623c-4fc9-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=394&id=u32c64d61&margin=%5Bobject%20Object%5D&name=image.png&originHeight=394&originWidth=501&originalType=binary&ratio=1&rotation=0&showTitle=false&size=23971&status=done&style=none&taskId=u67ca4958-f82f-4b02-98df-a8ddf89a256&title=&width=501" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2022/png/25561868/1668567662650-fc4fb5df-ffed-4d3a-82d1-7afcabb95df3.png#averageHue=%23eae8e5&clientId=u1679623c-4fc9-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=394&id=ub99ab6f0&margin=%5Bobject%20Object%5D&name=image.png&originHeight=394&originWidth=501&originalType=binary&ratio=1&rotation=0&showTitle=false&size=28951&status=done&style=none&taskId=u2ea6ef7b-02a6-4f11-bd77-bc879c08a9c&title=&width=501" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2022/png/25561868/1668567742707-7211fbd1-80d3-4a81-8248-c2f7c55c5ddd.png#averageHue=%23efeeed&clientId=u1679623c-4fc9-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=394&id=uaf151bb1&margin=%5Bobject%20Object%5D&name=image.png&originHeight=394&originWidth=501&originalType=binary&ratio=1&rotation=0&showTitle=false&size=18697&status=done&style=none&taskId=u61ffef31-d60c-4900-a175-5f70be89ce9&title=&width=501" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2022/png/25561868/1668567773069-8893c4f4-8402-4122-8b8f-081d7e10d651.png#averageHue=%23eeeceb&clientId=u1679623c-4fc9-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=394&id=u020647b9&margin=%5Bobject%20Object%5D&name=image.png&originHeight=394&originWidth=501&originalType=binary&ratio=1&rotation=0&showTitle=false&size=21076&status=done&style=none&taskId=u93b9f9ec-f3c5-4422-9a93-e7678da7a1e&title=&width=501" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2022/png/25561868/1668567800779-21c71438-0289-48f7-b510-4a8af79255c6.png#averageHue=%23ebe9e6&clientId=u1679623c-4fc9-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=394&id=u57fa884c&margin=%5Bobject%20Object%5D&name=image.png&originHeight=394&originWidth=501&originalType=binary&ratio=1&rotation=0&showTitle=false&size=27816&status=done&style=none&taskId=u0e289d89-6f5d-40f7-806c-166ed7b8012&title=&width=501" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2022/png/25561868/1668567862166-ded4c2f5-2435-43a2-8faf-c146ad959bbf.png#averageHue=%23eceae7&clientId=u1679623c-4fc9-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=394&id=u6baebe15&margin=%5Bobject%20Object%5D&name=image.png&originHeight=394&originWidth=501&originalType=binary&ratio=1&rotation=0&showTitle=false&size=26363&status=done&style=none&taskId=uea595bb5-5366-4be7-8bce-d845daf5d06&title=&width=501" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2022/png/25561868/1668568052118-1016c131-a22d-4885-a76b-ba76642cf7f7.png#averageHue=%23eeeceb&clientId=u1679623c-4fc9-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=394&id=u86d2c0db&margin=%5Bobject%20Object%5D&name=image.png&originHeight=394&originWidth=501&originalType=binary&ratio=1&rotation=0&showTitle=false&size=21622&status=done&style=none&taskId=u54a4829f-a776-4ed9-9f1e-2b437dcb221&title=&width=501" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2022/png/25561868/1668568084010-11587ec7-1753-467f-acfd-b31b744d0fca.png#averageHue=%23f0efee&clientId=u1679623c-4fc9-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=394&id=u53788f35&margin=%5Bobject%20Object%5D&name=image.png&originHeight=394&originWidth=501&originalType=binary&ratio=1&rotation=0&showTitle=false&size=17488&status=done&style=none&taskId=u7234609c-006e-4792-9839-010626b050a&title=&width=501" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2022/png/25561868/1668568117927-39607411-0f08-4ee4-a5c4-79c56e2d8f87.png#averageHue=%23eeedec&clientId=u1679623c-4fc9-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=394&id=uf75b8379&margin=%5Bobject%20Object%5D&name=image.png&originHeight=394&originWidth=501&originalType=binary&ratio=1&rotation=0&showTitle=false&size=20014&status=done&style=none&taskId=ub9585dbc-a3b0-4614-aea3-caeefa688c9&title=&width=501" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2022/png/25561868/1668568160782-31e1d912-8bac-4090-b616-98e0591c4fa8.png#averageHue=%23eeeceb&clientId=u1679623c-4fc9-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=394&id=u05229f76&margin=%5Bobject%20Object%5D&name=image.png&originHeight=394&originWidth=501&originalType=binary&ratio=1&rotation=0&showTitle=false&size=21620&status=done&style=none&taskId=u57f1d1f4-79ae-47ab-a285-d4192019dda&title=&width=501" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2022/png/25561868/1668568220698-3695b99a-8673-44a5-ad65-1b2227d1ec0f.png#averageHue=%23faf8f6&clientId=u1679623c-4fc9-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=394&id=u65261c28&margin=%5Bobject%20Object%5D&name=image.png&originHeight=394&originWidth=501&originalType=binary&ratio=1&rotation=0&showTitle=false&size=15982&status=done&style=none&taskId=ue7223c07-50da-4e7f-b089-b227ac5a4f0&title=&width=501" alt="image.png"><br>回到桌面，右键-&gt;Git Bash Here，在命令行输入<code>git version</code><br><img src="https://cdn.nlark.com/yuque/0/2022/png/25561868/1668568804889-172116f1-b4c7-43e7-9947-241c11a33cd7.png#averageHue=%23070502&clientId=u1679623c-4fc9-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=72&id=u03f99323&margin=%5Bobject%20Object%5D&name=image.png&originHeight=72&originWidth=475&originalType=binary&ratio=1&rotation=0&showTitle=false&size=13973&status=done&style=none&taskId=u365c7a48-473b-4532-87ff-22b22523022&title=&width=475" alt="image.png"><br>安装成功</p>
 
       </div>
       
         <div class="prev-or-next">
           <div class="post-foot-next">
             
+              <a href="/2022/10/12/Git%E5%88%9D%E7%BA%A7-%E6%A3%80%E6%9F%A5%E4%BB%93%E5%BA%93/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>上一页</span>
+              </a>
+            
           </div>
           <div class="post-attach">
             <span class="post-pubtime">
               <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
-              2022-05-21 14:50:40
+              2022-12-04 21:26:26
             </span>
             
-                  <span class="post-categories">
-                    <i class="iconfont icon-bookmark" title="分类"></i>
-                    
-                    <span class="span--category">
-                      <a href="/categories/Git/" title="Git">
-                        <b>#</b> Git
-                      </a>
-                    </span>
-                    
-                  </span>
-              
           </div>
           <div class="post-foot-prev">
             
-              <a href="/2022/05/21/git%E5%90%8C%E6%97%B6%E9%85%8D%E7%BD%AEGitHub%E5%92%8CGitee/" target="_self">
+              <a href="/2022/12/04/Git%E5%85%A5%E9%97%A8-%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B/" target="_self">
                 <span>下一页</span>
                 <i class="iconfont icon-chevronright"></i>
               </a>
@@ -227,23 +187,6 @@
       
     </div>
     
-  <div id="btn-catalog" class="btn-catalog">
-    <i class="iconfont icon-catalog"></i>
-  </div>
-  <div class="post-catalog hidden" id="catalog">
-    <div class="title">目录</div>
-    <div class="catalog-content">
-      
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFSSH"><span class="toc-text">什么是SSH</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Git%E4%B8%8EGitHub%E3%80%81Gitee%E4%B9%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1"><span class="toc-text">Git与GitHub、Gitee之间的通信</span></a></li></ol>
-      
-    </div>
-  </div>
-
-  
-<script src="/js/catalog.js"></script>
-
-
-
 
     
       <div class="comments-container">
